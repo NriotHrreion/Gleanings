@@ -4,6 +4,7 @@ import { ApartmentScene } from "./scenes/ApartmentScene";
 import { BootScene } from "./scenes/BootScene";
 import { MemoryTransitionScene } from "./scenes/MemoryTransitionScene";
 import { ActTwoScene } from "./scenes/ActTwoScene";
+import { ActThreeScene } from "./scenes/ActThreeScene";
 
 export const GAME_WIDTH = 640;
 export const GAME_HEIGHT = 360;
@@ -43,7 +44,8 @@ export function createGameConfig(
       ApartmentScene,
       MemoryTransitionScene,
       ActOneCompleteScene,
-      ActTwoScene
+      ActTwoScene,
+      ActThreeScene
     ]
   };
 }

@@ -90,6 +90,42 @@ export class BootScene extends Phaser.Scene {
       "item-dongniang-relic",
       "/items/it_relic_dongniang_detail_128x128.png"
     );
+    this.load.image(
+      "map-postpartum-kitchen",
+      "/maps/map_apartment_source.png"
+    );
+    this.load.spritesheet(
+      "actor-taipo-middle",
+      "/sprites/spr_yi_walk_96x192.png",
+      { frameWidth: 32, frameHeight: 48 }
+    );
+    this.load.spritesheet(
+      "actor-azhen",
+      "/sprites/spr_mia_walk_96x192.png",
+      { frameWidth: 32, frameHeight: 48 }
+    );
+    this.load.spritesheet(
+      "actor-family",
+      "/sprites/spr_mia_walk_96x192.png",
+      { frameWidth: 32, frameHeight: 48 }
+    );
+    this.load.image("obj-bowl", "/items/it_hongqu_sample_32x32.png");
+    this.load.image(
+      "obj-noodles",
+      "/items/it_taipo_note_32x32.png"
+    );
+    this.load.image(
+      "obj-laojiu-scoop",
+      "/objects/obj_laojiu_jar_open_32x64.png"
+    );
+    this.load.image(
+      "obj-cooked-noodles",
+      "/items/it_hongqu_sample_32x32.png"
+    );
+    this.load.image(
+      "item-blue-white-cup",
+      "/items/it_relic_dongniang_detail_128x128.png"
+    );
   }
 
   create(): void {
