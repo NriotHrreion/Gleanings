@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import { generateCultureLabel } from "../domain/cultureLabel";
 import { ChapterSaveService } from "../systems/ChapterSaveService";
+import { publishActiveScene } from "../systems/SceneStatus";
 
 export class ChapterCompleteScene extends Phaser.Scene {
   private readonly saveService = new ChapterSaveService(
@@ -17,6 +18,7 @@ export class ChapterCompleteScene extends Phaser.Scene {
       this.scene.start("Boot");
       return;
     }
+    publishActiveScene("ChapterComplete");
     const label = generateCultureLabel(state);
     this.cameras.main.setBackgroundColor("#17110F");
     this.add

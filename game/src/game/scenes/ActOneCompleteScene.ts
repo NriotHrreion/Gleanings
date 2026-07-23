@@ -4,6 +4,7 @@ import type { SenseChoice } from "../domain/act1State";
 import { effectProfileForChoice } from "../fx/JarMemoryEffect";
 import { SaveService } from "../systems/SaveService";
 import { ChapterSaveService } from "../systems/ChapterSaveService";
+import { publishActiveScene } from "../systems/SceneStatus";
 
 type CompleteData = {
   choice?: SenseChoice | null;
@@ -20,6 +21,7 @@ export class ActOneCompleteScene extends Phaser.Scene {
   }
 
   create(data: CompleteData): void {
+    publishActiveScene("ActOneComplete");
     const savedChoice = this.saveService.load().senseChoice;
     const choice = data.choice ?? savedChoice ?? "aroma";
     const profile = effectProfileForChoice(choice);

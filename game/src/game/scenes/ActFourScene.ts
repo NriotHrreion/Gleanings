@@ -25,6 +25,7 @@ import {
 } from "../render/ApartmentRenderer";
 import { findChapterTarget } from "../systems/ChapterInteraction";
 import { ChapterSaveService } from "../systems/ChapterSaveService";
+import { publishActiveScene } from "../systems/SceneStatus";
 import { ChapterChoicePanel } from "../ui/ChapterChoicePanel";
 import { ChapterHud } from "../ui/ChapterHud";
 import { CultureLabelPanel } from "../ui/CultureLabelPanel";
@@ -98,6 +99,7 @@ export class ActFourScene extends Phaser.Scene {
       return;
     }
     this.state = saved;
+    publishActiveScene("ActFour");
     const geometry = buildApartmentGeometry(
       act1Content.map,
       act1Content.interactables

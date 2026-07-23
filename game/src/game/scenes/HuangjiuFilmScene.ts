@@ -8,6 +8,7 @@ import { FilmTimeline } from "../domain/FilmTimeline";
 import { reduceChapter } from "../domain/chapterReducer";
 import type { ChapterOneSaveV2 } from "../domain/chapterState";
 import { ChapterSaveService } from "../systems/ChapterSaveService";
+import { publishActiveScene } from "../systems/SceneStatus";
 
 type FilmData = {
   replay?: boolean;
@@ -55,6 +56,7 @@ export class HuangjiuFilmScene extends Phaser.Scene {
       return;
     }
     this.state = saved;
+    publishActiveScene("HuangjiuFilm");
     this.timeline = new FilmTimeline(HUANGJIU_FILM_DURATION_MS);
     this.cameras.main.setBackgroundColor("#17110F");
     this.createControls();

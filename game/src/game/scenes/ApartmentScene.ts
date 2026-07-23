@@ -29,6 +29,7 @@ import {
   shouldShowContextHint
 } from "../systems/InteractionSystem";
 import { SaveService } from "../systems/SaveService";
+import { publishActiveScene } from "../systems/SceneStatus";
 import { ChoicePanel } from "../ui/ChoicePanel";
 import { DialogueBox } from "../ui/DialogueBox";
 import { InventoryPanel } from "../ui/InventoryPanel";
@@ -83,6 +84,7 @@ export class ApartmentScene extends Phaser.Scene {
   }
 
   create(): void {
+    publishActiveScene("Apartment");
     const geometry = buildApartmentGeometry(
       act1Content.map,
       act1Content.interactables

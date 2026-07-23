@@ -28,6 +28,7 @@ import {
 import { tileToPixelCenter } from "../render/ApartmentRenderer";
 import { findChapterTarget } from "../systems/ChapterInteraction";
 import { ChapterSaveService } from "../systems/ChapterSaveService";
+import { publishActiveScene } from "../systems/SceneStatus";
 import { ChapterChoicePanel } from "../ui/ChapterChoicePanel";
 import { ChapterHud } from "../ui/ChapterHud";
 import { DialogueBox } from "../ui/DialogueBox";
@@ -78,6 +79,7 @@ export class ActThreeScene extends Phaser.Scene {
       return;
     }
     this.state = saved;
+    publishActiveScene("ActThree");
 
     const geometry = buildChapterGeometry(act3Content.map);
     this.physics.world.setBounds(
